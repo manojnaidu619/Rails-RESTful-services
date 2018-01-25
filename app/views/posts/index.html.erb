@@ -1,0 +1,7 @@
+<h1>Welcome to my new blog!!!</h1>
+<% @post.each do |post| %>
+     <h1><%= post.title %></h1>
+     <%= post.content %><br>
+     <%= link_to "Show", post_path(post) %> |
+<% end %><br><br><br>
+<%= link_to "Create new post", new_post_path %><br>

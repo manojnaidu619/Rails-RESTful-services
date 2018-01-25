@@ -1,0 +1,8 @@
+<h2>Create new form</h2>
+<%= form_for @post do |post| %>
+  <%= post.label :title %><br>
+  <%= post.text_field :title %><br><br>
+  <%= post.label :content %><br>
+  <%= post.text_area :content%><br><br>
+  <%= post.submit "Create form" %>
+<% end %>
