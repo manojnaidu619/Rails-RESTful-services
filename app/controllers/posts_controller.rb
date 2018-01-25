@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
      if @post.delete
-       redirect_to posts_index_path
+       redirect_to root_path
      else
        render "destroy"
      end
