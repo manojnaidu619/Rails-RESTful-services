@@ -6,13 +6,18 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def edit
-    #code
+    @post = Post.find(params[:id])
   end
   def show
     @post = Post.find(params[:id])
   end
   def update
-    #code
+    @post = Post.find(params[:id])
+     if @post.update_attributes(post_params)
+       redirect_to post_path
+     else
+       render "edit"
+     end
   end
   def create
     @post = Post.new(post_params)
@@ -23,7 +28,12 @@ class PostsController < ApplicationController
      end
   end
   def destroy
-    #code
+    @post = Post.find(params[:id])
+     if @post.delete
+       redirect_to posts_index_path
+     else
+       render "destroy"
+     end
   end
 
   private
